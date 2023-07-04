@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./twofactorauthentication.component.css']
 })
 export class TwofactorauthenticationComponent {
+  code: string="";
+
+  onAuth(){
+
+  }
 
 }

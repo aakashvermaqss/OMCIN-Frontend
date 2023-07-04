@@ -1,1 +1,25 @@
-<p>twofactorauthentication works!</p>
+<div class="login-container">
+    <mat-card class="login-card">
+        <mat-card-header class="header">
+            <mat-card-title><img src="../../assets/omcin.png"></mat-card-title>
+        </mat-card-header>
+        <br>
+        <br>
+        <span style="text-align: center;"><strong>Two factor authentication</strong></span>
+        <br>
+        <span class="matlabel2"> We have sent a code to your registered email address</span>
+        <mat-card-content>
+            <form class="login-form" (submit)="onAuth()">
+                <mat-label class="matlabel">Enter code</mat-label>
+                <input class="formcontrol" type="text" placeholder="Enter code" [(ngModel)]="code" name="code"
+                    required>
+                <br>
+                <button mat-raised-button  type="submit" class="login-button">Verify</button>
+                <br>
+                <span class="matlabel">
+                    Didn't receive the code?<button style="justify-content: right !important;" mat-button type="submit" >Resend</button>
+                </span>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
