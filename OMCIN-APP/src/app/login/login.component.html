@@ -2,19 +2,25 @@
     <mat-card class="login-card">
         <mat-card-header class="header">
             <mat-card-title><img src="../../assets/omcin.png"></mat-card-title>
-            <mat-card-subtitle><strong>Login</strong></mat-card-subtitle>
+            <mat-card-subtitle><strong>&nbsp;Login</strong></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <form class="login-form" (submit)="onLogin()">
                 <mat-label class="matlabel">Registered email address</mat-label>
-                <input class="form-control" type="text" placeholder="Enter your email address" [(ngModel)]="email" name="email"
+                <input class="formcontrol" type="text" placeholder="Enter your email address" [(ngModel)]="email" name="email"
                     required>
                 <br>
                 <mat-label class="matlabel">Password</mat-label>
-                <input class="form-control" matInput type="password" placeholder="Enter your password" [(ngModel)]="password" name="password"
+                <input class="formcontrol" matInput type="password" placeholder="Enter your password" [(ngModel)]="password" name="password"
                     required>
+                <br>
+                <label class="matlabel">
+                    <input type="checkbox">
+                    <span class="matlabel">&nbsp;Remember me</span>
+                  </label>
                 <button mat-raised-button  type="submit" class="login-button">Sign In</button>
             </form>
         </mat-card-content>
+        <button mat-button class="center">Forgot Password?</button>
     </mat-card>
 </div>
