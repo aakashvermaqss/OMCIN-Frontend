@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OMCIN-APP';
+  toggleSidenav() {
+    // Your implementation goes here
+  }
+  
 }
