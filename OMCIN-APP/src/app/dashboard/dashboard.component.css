@@ -52,3 +52,9 @@
 .mat-card {
   box-shadow: none;
 }
+
+.large-card-border{
+  background-color: lightgray;
+  border-radius: 3px;
+  padding: 20px;
+}
