@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
 import { LoginComponent } from './login/login.component';
 import { TwofactorauthenticationComponent } from './twofactorauthentication/twofactorauthentication.component';
 import { CompanyComponent } from './MasterData/company/company.component';
@@ -32,7 +31,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
   declarations: [
     AppComponent,
     DashboardComponent,
-    SidebarmenuComponent,
     LoginComponent,
     TwofactorauthenticationComponent,
     CompanyComponent,
