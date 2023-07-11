@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  //data: any[];
+  constructor(private router: Router,private http: HttpClient) { }
   ngOnInit() {
-
+    this.onLogin();
   }
 
   email: string="";
@@ -21,6 +22,14 @@ export class LoginComponent implements OnInit {
     console.log(`Email: ${this.email}, Password: ${this.password}`);
     if(this.email!=null&&this.email!=""&&this.password!=null&&this.password=="")
     {
+      // this.http.get<any[]>('http://localhost:3000/api/data').subscribe(
+      //   response => {
+      //     this.data = response;
+      //   },
+      //   error => {
+      //     console.error(error);
+      //   }
+      // );
     }
   }
 
