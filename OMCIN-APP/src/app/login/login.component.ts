@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -8,29 +8,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  //data: any[];
-  constructor(private router: Router,private http: HttpClient) { }
+  data: any[] = [];
+  email: string = '';
+  password: string = '';
+
+  constructor(private router: Router, private dataService: DataService) {}
+
   ngOnInit() {
     this.onLogin();
   }
 
-  email: string="";
-  password: string="";
-
   onLogin() {
-    // Add your login logic here
     console.log(`Email: ${this.email}, Password: ${this.password}`);
-    if(this.email!=null&&this.email!=""&&this.password!=null&&this.password=="")
-    {
-      // this.http.get<any[]>('http://localhost:3000/api/data').subscribe(
-      //   response => {
-      //     this.data = response;
-      //   },
-      //   error => {
-      //     console.error(error);
-      //   }
-      // );
+    if (this.email !== '' && this.password !== '') {
+      this.dataService.getLoginData(this.email, this.password).subscribe({
+        next: (response) => {
+          this.data = response;
+          console.log(this.data);
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      });
     }
   }
-
 }
