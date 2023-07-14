@@ -12,6 +12,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 import { QuotationdetailComponent } from './quotationdetail/quotationdetail.component';
 import { SettingComponent } from './setting/setting.component';
+import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'setting',
     component: SettingComponent
+  },
+  {
+    path: 'addchemical',
+    component: AddChemicalComponent
   },
 ];
 

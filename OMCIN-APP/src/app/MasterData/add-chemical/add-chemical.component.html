@@ -1,0 +1,42 @@
+<div class="container">
+    <h3>Chemical > AddChemical</h3>
+    <div class="formcontainer">
+        <form (ngSubmit)="submitForm()" #chemicalForm="ngForm">
+            <h1 style="font-weight: bold;">Add Chemical</h1>
+            <div class="row">
+                <button type="reset" routerLink="/chemical">Cancel</button>
+                <button type="submit" [disabled]="!chemicalForm.form.valid" routerLink="/chemical">Submit</button>
+            </div>
+            <table cellspacing="20px" cellpadding="20px">
+                <tr>
+                    <th><label for="chemicalName">Chemical Name</label></th>
+                    <td><input type="text" id="chemicalName" name="chemicalName" [(ngModel)]="chemical.ChemicalName"
+                            required></td>
+                    <th><label for="purity">Purity</label></th>
+                    <td><input type="text" id="purity" name="purity" [(ngModel)]="chemical.Purity" required></td>
+                </tr>
+                <tr>
+                    <th><label for="brand">Brand</label></th>
+                    <td><input type="text" id="brand" name="brand" [(ngModel)]="chemical.Brand" required></td>
+                    <th><label for="expiration">Expiration</label></th>
+                    <td><input type="text" id="expiration" name="expiration" [(ngModel)]="chemical.Expiration" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="casNo">CAS No</label></th>
+                    <td><input type="text" id="casNo" name="casNo" [(ngModel)]="chemical.CASNo" required></td>
+                    <th><label for="tracability">Tracability</label></th>
+                    <td><input type="text" id="tracability" name="tracability" [(ngModel)]="chemical.Tracability"
+                            required></td>
+                </tr>
+                <tr>
+                    <th><label for="catNo">CAT No</label></th>
+                    <td><input type="text" id="catNo" name="catNo" [(ngModel)]="chemical.CATNo" required></td>
+                    <th><label for="listPrice">List Price</label></th>
+                    <td><input type="number" id="listPrice" name="listPrice" [(ngModel)]="chemical.ListPrice" required>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

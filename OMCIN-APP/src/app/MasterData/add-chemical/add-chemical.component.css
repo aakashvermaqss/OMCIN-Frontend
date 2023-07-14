@@ -1,0 +1,18 @@
+.formcontrol {
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+th {
+    text-align: left;
+}
+
+label,
+input {
+    padding-right: 00%;
+
+}
