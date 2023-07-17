@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
+
 @Component({
   selector: 'app-add-chemical',
   templateUrl: './add-chemical.component.html',
@@ -15,8 +16,7 @@ export class AddChemicalComponent implements OnInit {
   ngOnInit(){
   }
 
-  saveChemicalData(data: any): void {
-    console.log(data);
+  saveChemicalData(data: any){
     this.subscription = this.dataService.putChemicalDetails(data).subscribe({
       next: (response) => {
       },
@@ -26,7 +26,7 @@ export class AddChemicalComponent implements OnInit {
     });
   }
 
-  submitForm() {
+  submitForm(chemicalData:any) {
     const ListPrice=this.chemical.ListPrice;
     const SurchargePrice=(ListPrice/9.54);
     this.chemical.SurchargePrice=SurchargePrice;

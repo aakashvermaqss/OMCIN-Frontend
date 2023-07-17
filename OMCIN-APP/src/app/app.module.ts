@@ -28,6 +28,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.component';
+import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.com
     OrderdetailComponent,
     EmployeeComponent,
     SettingComponent,
-    AddChemicalComponent
+    AddChemicalComponent,
+    EditchemicalComponent
   ],
   imports: [
     BrowserModule,

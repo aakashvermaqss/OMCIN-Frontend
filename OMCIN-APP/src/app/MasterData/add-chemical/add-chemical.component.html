@@ -1,39 +1,58 @@
 <div class="container">
     <h3>Chemical > AddChemical</h3>
     <div class="formcontainer">
-        <form (ngSubmit)="submitForm()" #chemicalForm="ngForm">
-            <h1 style="font-weight: bold;">Add Chemical</h1>
+        <form #chemicalForm="ngForm" name="chemicalForm">
             <div class="row">
-                <button type="reset" routerLink="/chemical">Cancel</button>
-                <button type="submit" [disabled]="!chemicalForm.form.valid" routerLink="/chemical">Submit</button>
+                <div class="col-sm-3">
+                    <h1 style="font-weight: bold;">Add Chemical</h1>
+                </div>
+                <div class="col-sm-6"></div>
+                <div class="col-sm-3"><button class="cancel-button" type="reset" routerLink="/chemical">Cancel</button>
+                    <button class="save-button" type="button" (click)="submitForm(chemicalForm.value)"
+                        [disabled]="!chemicalForm.form.valid" routerLink="/chemical">Add Chemicals</button>
+                </div>
             </div>
             <table cellspacing="20px" cellpadding="20px">
                 <tr>
                     <th><label for="chemicalName">Chemical Name</label></th>
-                    <td><input type="text" id="chemicalName" name="chemicalName" [(ngModel)]="chemical.ChemicalName"
-                            required></td>
+                    <td><input type="text" id="chemicalName" name="chemicalName" placeholder="Enter Chemical name"
+                            [(ngModel)]="chemical.ChemicalName" class="form-control" required></td>
                     <th><label for="purity">Purity</label></th>
-                    <td><input type="text" id="purity" name="purity" [(ngModel)]="chemical.Purity" required></td>
+                    <td><input type="text" id="purity" name="purity" placeholder="Enter puirty code"
+                            [(ngModel)]="chemical.Purity" class="form-control" required></td>
                 </tr>
                 <tr>
                     <th><label for="brand">Brand</label></th>
-                    <td><input type="text" id="brand" name="brand" [(ngModel)]="chemical.Brand" required></td>
+                    <td><input type="text" id="brand" name="brand" placeholder="Enter brand name"
+                            [(ngModel)]="chemical.Brand" class="form-control" required></td>
                     <th><label for="expiration">Expiration</label></th>
-                    <td><input type="text" id="expiration" name="expiration" [(ngModel)]="chemical.Expiration" required>
+                    <td>
+                        <select class="form-select" aria-label="chemical.Expiration" id="expiration" name="expiration"
+                            [(ngModel)]="chemical.Expiration" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="1 Year">1 Year</option>
+                            <option value="2 Years">2 Years</option>
+                            <option value="3 Years">3 Years</option>
+                            <option value="4 Years">4 Years</option>
+                            <option value="5 Years">5 Years</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="casNo">CAS No</label></th>
-                    <td><input type="text" id="casNo" name="casNo" [(ngModel)]="chemical.CASNo" required></td>
-                    <th><label for="tracability">Tracability</label></th>
-                    <td><input type="text" id="tracability" name="tracability" [(ngModel)]="chemical.Tracability"
-                            required></td>
+                    <td><input type="text" id="casNo" name="casNo" placeholder="Enter CAS No"
+                            [(ngModel)]="chemical.CASNo" class="form-control" required></td>
+                    <th><label for="traceability">Traceability</label></th>
+                    <td><input type="text" id="traceability" name="traceability" placeholder="Enter traceability"
+                            [(ngModel)]="chemical.Traceability" class="form-control" required></td>
                 </tr>
                 <tr>
                     <th><label for="catNo">CAT No</label></th>
-                    <td><input type="text" id="catNo" name="catNo" [(ngModel)]="chemical.CATNo" required></td>
+                    <td><input type="text" id="catNo" name="catNo" placeholder="Enter CAT no"
+                            [(ngModel)]="chemical.CATNo" class="form-control" required></td>
                     <th><label for="listPrice">List Price</label></th>
-                    <td><input type="number" id="listPrice" name="listPrice" [(ngModel)]="chemical.ListPrice" required>
+                    <td><input type="number" id="listPrice" placeholder="Enter price" name="listPrice"
+                            [(ngModel)]="chemical.ListPrice" class="form-control" required>
                     </td>
                 </tr>
             </table>

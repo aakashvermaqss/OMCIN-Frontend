@@ -13,6 +13,7 @@ import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 import { QuotationdetailComponent } from './quotationdetail/quotationdetail.component';
 import { SettingComponent } from './setting/setting.component';
 import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.component';
+import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'addchemical',
     component: AddChemicalComponent
+  },
+  {
+    path: 'editchemical/:ChemicalId',
+    component: EditchemicalComponent
   },
 ];
 

@@ -36,6 +36,15 @@ export class DataService {
     );
   }
 
+  getChemicalDetailsById(chemicalId: string): Observable<any> {
+    const apiUrl = `http://localhost:3000/api/chemicals/getChemicalById/${chemicalId}`;
+    return this.http.get(apiUrl).pipe(
+      catchError((error: any) => {
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+
   putChemicalDetails(data: any): Observable<any> {
     const apiUrl = 'http://localhost:3000/api/chemicals/putChemicals';
 
@@ -46,8 +55,8 @@ export class DataService {
     );
   }
 
-  editChemicalDetails(data: any,chemicalId:string): Observable<any> {
-    const apiUrl = `http://localhost:3000/api/chemicals/putChemicals/${chemicalId}`;
+  editChemicalDetails(data: any, ChemicalId: string): Observable<any> {
+    const apiUrl = `http://localhost:3000/api/chemicals/editChemicalById/${ChemicalId}`;
 
     return this.http.put(apiUrl, data).pipe(
       catchError((error: any) => {

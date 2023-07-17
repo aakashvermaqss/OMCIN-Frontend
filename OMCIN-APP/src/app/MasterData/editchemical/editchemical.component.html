@@ -1,0 +1,48 @@
+<div class="container">
+    <h3>Chemical > EditChemical</h3>
+    <div class="formcontainer">
+        <form #chemicalForm="ngForm" name="chemicalForm">
+            <div class="row">
+                    <div class="col-sm-3"><h1 style="font-weight: bold;">Edit Chemical</h1></div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-4"><button class="cancel-button" type="reset" routerLink="/chemical">Cancel</button>
+                    <button type="button" class="save-button" (click)="submitForm(chemicalForm.value)" [disabled]="!chemicalForm.form.valid" routerLink="/chemical">Update Chemicals</button></div>
+            </div>
+            <table cellspacing="20px" cellpadding="20px">
+                <tr>
+                    <th><label for="chemicalName">Chemical Name</label></th>
+                    <td><input type="text" id="chemicalName" name="chemicalName" placeholder="Enter Chemical name" [(ngModel)]="chemical[0].ChemicalName" class="form-control" required></td>
+                    <th><label for="purity">Purity</label></th>
+                    <td><input type="text" id="purity" name="purity" placeholder="Enter purity code" [(ngModel)]="chemical[0].Purity" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th><label for="brand">Brand</label></th>
+                    <td><input type="text" id="brand" name="brand" placeholder="Enter brand name" [(ngModel)]="chemical[0].Brand" class="form-control" required></td>
+                    <th><label for="expiration">Expiration</label></th>
+                    <td>
+                        <select id="expiration" name="expiration" [(ngModel)]="chemical[0].Expiration" class="form-control">
+                            <option value="" disabled selected>Select Expiration Years</option>
+                            <option value="1 Year">1 Year</option>
+                            <option value="2 Years">2 Years</option>
+                            <option value="3 Years">3 Years</option>
+                            <option value="4 Years">4 Years</option>
+                            <option value="5 Years">5 Years</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="casNo">CAS No</label></th>
+                    <td><input type="text" id="casNo" name="casNo" placeholder="Enter CAS No" [(ngModel)]="chemical[0].CASNo" class="form-control" required></td>
+                    <th><label for="traceability">Traceability</label></th>
+                    <td><input type="text" id="traceability" name="traceability" placeholder="Enter traceability" [(ngModel)]="chemical[0].Traceability" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th><label for="catNo">CAT No</label></th>
+                    <td><input type="text" id="catNo" name="catNo" placeholder="Enter CAT no" [(ngModel)]="chemical[0].CATNo" class="form-control" required></td>
+                    <th><label for="listPrice">List Price</label></th>
+                    <td><input type="number" id="listPrice" placeholder="Enter price" name="listPrice" [(ngModel)]="chemical[0].ListPrice" class="form-control" required></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

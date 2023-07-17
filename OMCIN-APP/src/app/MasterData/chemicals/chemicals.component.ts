@@ -15,6 +15,7 @@ export class ChemicalsComponent implements OnInit {
   data: any[] = [];
   ExcelData: any[] = [];
   chemical: any = {};
+  searchTerm: string = '';
   constructor(private dataService: DataService) { }
   ngOnInit() {
     this.subscription = this.dataService.getChemicalDetails().subscribe({
@@ -58,20 +59,6 @@ export class ChemicalsComponent implements OnInit {
       }
     });
   }
-
-  // editChemicalData(chemicalId: string){
-  //   console.log(chemicalId);
-
-  //   this.subscription = this.dataService.editChemicalDetails(data,chemicalId).subscribe({
-  //     next: (response) => {
-  //       this.data = this.data.filter(item => item.ChemicalId !== chemicalId);
-  //     },
-  //     error: (error) => {
-  //       console.error(error);
-  //     }
-  //   });
-  // }
-  
   
   sortedColumn: string = '';
   sortDirection: number = 1;
@@ -134,5 +121,8 @@ export class ChemicalsComponent implements OnInit {
     fileReader.readAsArrayBuffer(file);
   }
 
+  search() {
+  }
+  
 }
 

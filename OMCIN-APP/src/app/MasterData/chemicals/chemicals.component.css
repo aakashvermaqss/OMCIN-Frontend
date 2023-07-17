@@ -1,17 +1,24 @@
 /* table.component.css */
 
+.container {
+    overflow-x:inherit;
+  }
+  
+
 .table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
     background-color: white;
     border: 2px solid black;
+    overflow-x: auto;
 }
 
 .table th,
 .table td {
-    padding: 12px 15px;
+    padding: 3px 5px;
     text-align: left;
+    white-space: nowrap;
 }
 
 .table thead th {
@@ -46,4 +53,39 @@
     margin-top: 20px;
     background-color: #00C4B9 !important;
     width: 100% !important;
+}
+
+  @media screen and (max-width: 768px) {
+    .table td,
+    .table th {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+  }
+  
+
+  .save-button {
+    background-color: #00C4B9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    color: #00C4B9;
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px ;
+    border:1px solid #00C4B9;
+    cursor: pointer;
+}
+
+.cancel-button2 {
+    color: #00C4B9;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
