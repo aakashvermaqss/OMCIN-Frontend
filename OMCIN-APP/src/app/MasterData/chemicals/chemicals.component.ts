@@ -122,7 +122,19 @@ export class ChemicalsComponent implements OnInit {
   }
 
   search() {
+    if(this.searchTerm){
+      this.subscription = this.dataService.getSearchedChemicals(this.searchTerm).subscribe({
+        next: (data) => {
+          this.data = data;
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      });
+    }
+    else{
+      this.ngOnInit();
+    }
   }
-  
 }
 

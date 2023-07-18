@@ -4,11 +4,11 @@
       <h1>Chemicals</h1>
     </div>
     <div class="col-sm-3">
-      <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup.enter)="search()" placeholder="Search"/>
+      <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search()" placeholder="Search"/>
     </div>
     <div class="col-sm-1"><button class="cancel-button">Filters</button></div>
-    <div class="col-sm-2"><input class="" type="file" (change)="ReadExcel($event)"></div>
-    <div class="col-sm-2"><button class="cancel-button" (click)="exportToExcel()">Export to excel</button></div>
+    <div class="col-sm-2"><button class="cancel-button" (click)="fileInput.click()">Import from Excel</button><input #fileInput type="file" (change)="ReadExcel($event)" style="display: none;"></div>
+    <div class="col-sm-2"><button class="cancel-button" (click)="exportToExcel()">Export to Excel</button></div>
     <div class="col-sm-2"> <button class="save-button" routerLink="/addchemical">Add chemical +</button></div>
   </div>
   <div class="container">

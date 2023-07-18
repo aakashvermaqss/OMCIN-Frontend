@@ -36,6 +36,16 @@ export class DataService {
     );
   }
 
+  getSearchedChemicals(searchData: string): Observable<any> {
+    const apiUrl = `http://localhost:3000/api/chemicals/searchChemicals/${searchData}`;
+
+    return this.http.get(apiUrl).pipe(
+      catchError((error: any) => {
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+
   getChemicalDetailsById(chemicalId: string): Observable<any> {
     const apiUrl = `http://localhost:3000/api/chemicals/getChemicalById/${chemicalId}`;
     return this.http.get(apiUrl).pipe(
