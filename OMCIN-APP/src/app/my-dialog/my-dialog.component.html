@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-11">
+            <h3>Filters</h3>
+        </div>
+        <div class="col-sm-1"><button class="cancel-button2" (click)="cancel()"
+                routerLink="/chemical"><mat-icon>close</mat-icon></button></div>
+    </div>
+    <form (ngSubmit)="filterGetData(formData)" #formData="ngForm">
+        <div class="row">
+            <div class="col-sm-12">
+                List Price
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="SliderStartValue" type="range" min="1000" max="50000" step="1000" [(ngModel)]="filterData.SliderStartValue" name="SliderStartValue">
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="SliderEndValue" type="range" min="51000" max="100000" step="1000" [(ngModel)]="filterData.SliderEndValue" name="SliderEndValue">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">Rs:{{ filterData.SliderStartValue}}</div>
+            <div class="col-sm-9"></div>
+            <div class="col-sm-2">Rs:{{ filterData.SliderEndValue}}</div>
+        </div>
+        <hr>
+        <div class="row">
+            <mat-label>Expiration</mat-label>
+            <br>
+            <select name="Expiration" [(ngModel)]="filterData.Expiration" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1 Year">1 Year</option>
+                <option value="2 Years">2 Years</option>
+                <option value="3 Years">3 Years</option>
+                <option value="4 Years">4 Years</option>
+                <option value="5 Years">5 Years</option>
+            </select>
+        </div>
+        <hr>
+        <div class="row">
+            <mat-label>Currency</mat-label>
+            <br>
+            <select name="Currency" [(ngModel)]="filterData.Currency" required>
+                <option value="" disabled selected>Select</option>
+                <option value="USD">United State Dollar</option>
+                <option value="INR">Indian Rupees</option>
+            </select>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2"><button type="reset" class="cancel-button">Clear</button></div>
+            <div class="col-sm-2"><button type="submit" class="save-button" routerLink="/chemical">Apply</button></div>
+        </div>
+    </form>
+</div>

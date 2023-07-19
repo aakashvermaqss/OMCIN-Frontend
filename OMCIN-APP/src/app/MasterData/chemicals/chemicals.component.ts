@@ -3,6 +3,8 @@ import { DataService } from 'src/app/services/data.service';
 import { Subscription } from 'rxjs';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
+import { MatDialog } from '@angular/material/dialog';
+import { MyDialogComponent } from 'src/app/my-dialog/my-dialog.component';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class ChemicalsComponent implements OnInit {
   ExcelData: any[] = [];
   chemical: any = {};
   searchTerm: string = '';
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,private dialog: MatDialog) { }
   ngOnInit() {
     this.subscription = this.dataService.getChemicalDetails().subscribe({
       next: (data) => {
@@ -135,6 +137,27 @@ export class ChemicalsComponent implements OnInit {
     else{
       this.ngOnInit();
     }
+  }
+  filterOpenDialog() {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      width: '400px' // Specify the desired width of the dialog
+    });
+
+    dialogRef.afterClosed().subscribe((filterData) => {
+      if(filterData){
+        this.subscription = this.dataService.getFilteredChemicals(filterData).subscribe({
+          next: (data) => {
+            this.data = data;
+          },
+          error: (error) => {
+            console.error(error);
+          }
+        });
+      }
+      else{
+        this.ngOnInit();
+      }
+    });
   }
 }
 

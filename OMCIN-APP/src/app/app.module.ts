@@ -29,6 +29,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.component';
 import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { EditchemicalComponent } from './MasterData/editchemical/editchemical.co
     EmployeeComponent,
     SettingComponent,
     AddChemicalComponent,
-    EditchemicalComponent
+    EditchemicalComponent,
+    MyDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,9 @@ import { EditchemicalComponent } from './MasterData/editchemical/editchemical.co
     MatSidenavModule,
     MatExpansionModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

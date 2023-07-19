@@ -34,6 +34,7 @@ export class EditchemicalComponent implements OnInit {
   }
 
   editChemicalData(updatedChemicalData:any): void {
+    console.log(updatedChemicalData);
     this.subscription = this.dataService.editChemicalDetails(updatedChemicalData, this.chemicalId).subscribe({
       next: (response) => {
       },

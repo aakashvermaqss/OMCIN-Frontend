@@ -1,9 +1,9 @@
 /* table.component.css */
 
 .container {
-    overflow-x:inherit;
-  }
-  
+    overflow-x: inherit;
+}
+
 
 .table {
     width: 100%;
@@ -55,16 +55,17 @@
     width: 100% !important;
 }
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
     .table td,
     .table th {
-      padding: 8px 10px;
-      font-size: 12px;
+        padding: 8px 10px;
+        font-size: 12px;
     }
-  }
-  
+}
 
-  .save-button {
+
+.save-button {
     background-color: #00C4B9;
     color: white;
     padding: 7px 16px;
@@ -78,8 +79,8 @@
     background-color: white;
     padding: 7px 16px;
     border: none;
-    border-radius: 5px ;
-    border:1px solid #00C4B9;
+    border-radius: 5px;
+    border: 1px solid #00C4B9;
     cursor: pointer;
 }
 
