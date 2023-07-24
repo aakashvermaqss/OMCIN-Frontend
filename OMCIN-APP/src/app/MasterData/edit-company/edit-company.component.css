@@ -1,0 +1,33 @@
+th {
+    text-align: left;
+}
+
+label,
+input {
+    padding-right: 00%;
+
+}
+.formcontainer{
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+}
+.save-button {
+    margin-left: 5px;
+    background-color: #00C4B9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    color: #00C4B9;
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px ;
+    border:1px solid #00C4B9;
+    cursor: pointer;
+}

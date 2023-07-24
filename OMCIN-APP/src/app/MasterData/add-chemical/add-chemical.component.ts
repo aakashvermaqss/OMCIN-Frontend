@@ -13,10 +13,10 @@ export class AddChemicalComponent implements OnInit {
   data: any[] = [];
   chemical: any = {};
   constructor(private dataService: DataService) { }
-  ngOnInit(){
+  ngOnInit() {
   }
 
-  saveChemicalData(data: any){
+  saveChemicalData(data: any) {
     this.subscription = this.dataService.putChemicalDetails(data).subscribe({
       next: (response) => {
       },
@@ -26,10 +26,10 @@ export class AddChemicalComponent implements OnInit {
     });
   }
 
-  submitForm(chemicalData:any) {
-    const ListPrice=this.chemical.ListPrice;
-    const SurchargePrice=(ListPrice/9.54);
-    this.chemical.SurchargePrice=SurchargePrice;
+  submitForm(chemicalData: any) {
+    const ListPrice = this.chemical.ListPrice;
+    const SurchargePrice = (ListPrice / 9.54);
+    this.chemical.SurchargePrice = SurchargePrice;
     this.data.push(this.chemical);
     this.saveChemicalData(this.data);
   }

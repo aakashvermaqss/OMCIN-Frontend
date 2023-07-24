@@ -1,0 +1,98 @@
+/* table.component.css */
+
+.container {
+    overflow-x: inherit;
+}
+
+
+.table {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    overflow-x: auto;
+}
+
+.table th,
+.table td {
+    padding: 3px 5px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table thead th {
+    background-color: #ddd;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.table td {
+    font-size: 11px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.formcontainer {
+    background-color: white;
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.login-button {
+    margin-top: 20px;
+    background-color: #00C4B9 !important;
+    width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+
+    .table td,
+    .table th {
+        padding: 8px 10px;
+        font-size: 8px;
+    }
+}
+
+
+.save-button {
+    background-color: #00C4B9;
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    color: #00C4B9;
+    background-color: white;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #00C4B9;
+    cursor: pointer;
+}
+
+.cancel-button2 {
+    color: #00C4B9;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.mat-icon {
+    font-size: 13px;
+    height: 13px;
+    width: 13px;
+}

@@ -14,6 +14,8 @@ import { QuotationdetailComponent } from './quotationdetail/quotationdetail.comp
 import { SettingComponent } from './setting/setting.component';
 import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.component';
 import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
+import { EditCompanyComponent } from './MasterData/edit-company/edit-company.component';
+import { AddCompanyComponent } from './MasterData/add-company/add-company.component';
 
 const routes: Routes = [
   {
@@ -67,6 +69,14 @@ const routes: Routes = [
   {
     path: 'editchemical/:ChemicalId',
     component: EditchemicalComponent
+  },
+  {
+    path:'editcompany/:CompanyId',
+    component: EditCompanyComponent
+  },
+  {
+    path:'addcompany',
+    component:AddCompanyComponent
   },
 ];
 

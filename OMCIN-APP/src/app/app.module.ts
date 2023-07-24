@@ -32,6 +32,9 @@ import { EditchemicalComponent } from './MasterData/editchemical/editchemical.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import {MatSliderModule} from '@angular/material/slider';
+import { EditCompanyComponent } from './MasterData/edit-company/edit-company.component';
+import { AddCompanyComponent } from './MasterData/add-company/add-company.component';
+import { ChemicalDialogComponentComponent } from './chemical-dialog-component/chemical-dialog-component.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import {MatSliderModule} from '@angular/material/slider';
     SettingComponent,
     AddChemicalComponent,
     EditchemicalComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    EditCompanyComponent,
+    AddCompanyComponent,
+    ChemicalDialogComponentComponent
   ],
   imports: [
     BrowserModule,

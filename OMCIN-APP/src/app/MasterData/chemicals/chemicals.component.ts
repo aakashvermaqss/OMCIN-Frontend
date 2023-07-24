@@ -159,5 +159,13 @@ export class ChemicalsComponent implements OnInit {
       }
     });
   }
+
+  selectAllRows(){
+
+  }
+
+  selectRow(){
+    
+  }
 }
 

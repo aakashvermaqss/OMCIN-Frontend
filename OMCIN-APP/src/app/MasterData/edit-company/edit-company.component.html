@@ -1,0 +1,91 @@
+<div class="container">
+    <h3>Company > EditCompany</h3>
+    <div class="formcontainer">
+        <form #companyForm="ngForm" name="companyForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h1 style="font-weight: bold;">Edit Company</h1>
+                </div>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-4"><button class="cancel-button" type="reset" routerLink="/company">Cancel</button>
+                    <button class="save-button" type="button" (click)="submitForm(companyForm.value)"
+                        [disabled]="!companyForm.form.valid" routerLink="/company">Update Company</button>
+                </div>
+            </div>
+            <table cellspacing="20px" cellpadding="20px">
+                <tr>
+                    <th><label for="companyName">Company Name</label></th>
+                    <td><input type="text" id="companyName" name="companyName" placeholder="Enter Company name"
+                            [(ngModel)]="company.CompanyName" class="form-control" required></td>
+                    <th><label for="zipcode">Zip Code</label></th>
+                    <td><input type="text" id="zipcode" name="purity" placeholder="Enter zip code"
+                            [(ngModel)]="company.Zipcode" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th><label for="address">Brand</label></th>
+                    <td><input type="text" id="address" name="address" placeholder="Address line 1"
+                            [(ngModel)]="company.Address" class="form-control" required></td>
+                    <th><label for="gstNo">GST No</label></th>
+                    <td><input type="text" id="gstNo" name="gstNo" placeholder="Enter GST no"
+                            [(ngModel)]="company.GSTNo" class="form-control" required> </td>
+                </tr>
+                <tr>
+                    <th><label for="address"></label></th>
+                    <td><input type="text" id="address" name="address" placeholder="Address line 2"
+                            [(ngModel)]="company.Address2" class="form-control" required></td>
+                    <th><label for="vatNo">VAT No</label></th>
+                    <td><input type="text" id="vatNo" name="vatNo" placeholder="Enter VAT no"
+                            [(ngModel)]="company.VATNo" class="form-control" required> </td>
+                </tr>
+                <tr>
+                    <th><label for="country">Country</label></th>
+                    <td>
+                        <select class="form-select" aria-label="company.Country" id="country" name="country"
+                            [(ngModel)]="company.Country" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="India">India</option>
+                            <option value="US">US</option>
+                            <option value="UK">UK</option>
+                        </select>
+                    </td>
+                    <th><label for="cin">CIN</label></th>
+                    <td><input type="text" id="cin" name="cin" placeholder="Enter CIN" [(ngModel)]="company.CIN"
+                            class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th><label for="state">State</label></th>
+                    <td>
+                        <select class="form-select" aria-label="company.State" id="state" name="state"
+                            [(ngModel)]="company.State" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="UP">UP</option>
+                            <option value="Maharastra">Maharastra</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </td>
+                    <th><label for="currency">Currency</label></th>
+                    <td>
+                        <select class="form-select" aria-label="company.Currency" id="currency" name="currency"
+                            [(ngModel)]="company.Currency" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="USD">United State Dollar</option>
+                            <option value="INR">Indian Rupees</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="city">City</label></th>
+                    <td>
+                        <select class="form-select" aria-label="company.City" id="city" name="city"
+                            [(ngModel)]="company.City" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Lucknow">Luckow</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="WashingtonDC">WashingtonDC</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

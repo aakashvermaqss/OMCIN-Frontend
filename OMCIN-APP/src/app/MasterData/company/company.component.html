@@ -1,1 +1,60 @@
-<p>company works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Companies</h2>
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search()" placeholder="Search" />
+        </div>
+        <div class="col-sm-1"><button class="cancel-button" (click)="filterOpenDialog()">Filters</button></div>
+        <div class="col-sm-2"> <button class="save-button" routerLink="/addcompany">Add company +</button></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table" id="tableId" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" (click)="selectAllRows()"></th>
+                        <th (click)="sortData('CompanyName')">CompanyName<i class="fas"
+                                [ngClass]="{'fa-sort': sortedColumn !== 'CompanyName', 'fa-sort-up': sortedColumn === 'CompanyName' && sortDirection === 1, 'fa-sort-down': sortedColumn === 'CompanyName' && sortDirection === -1}"></i>
+                        </th>
+                        <th>Address</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Zipcode</th>
+                        <th>GSTNo</th>
+                        <th>VATNo</th>
+                        <th>CIN</th>
+                        <th>Currency</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td><input type="checkbox" (click)="selectRow()"></td>
+                        <td>{{ item.CompanyName }}</td>
+                        <td>{{ item.Address }}</td>
+                        <td>{{ item.Country }}</td>
+                        <td>{{ item.State }}</td>
+                        <td>{{ item.City }}</td>
+                        <td>{{ item.Zipcode}}</td>
+                        <td>{{ item.GSTNo }}</td>
+                        <td>{{ item.VATNo }}</td>
+                        <td>{{ item.CIN }}</td>
+                        <td>{{ item.Currency }}</td>
+                        <td>
+                            <button class="cancel-button2"
+                                [routerLink]="['/editcompany', item.CompanyId]"><mat-icon>edit</mat-icon></button>
+                        </td>
+                        <td>
+                            <button class="cancel-button2"
+                                (click)="deleteCompanyData(item.CompanyId)"><mat-icon>delete</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>

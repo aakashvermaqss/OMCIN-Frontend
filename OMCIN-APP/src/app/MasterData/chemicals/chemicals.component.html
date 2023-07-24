@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-2">
-      <h1>Chemicals</h1>
+      <h2>Chemicals</h2>
     </div>
     <div class="col-sm-3">
       <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search()" placeholder="Search"/>
@@ -11,45 +11,49 @@
     <div class="col-sm-2"><button class="cancel-button" (click)="exportToExcel()">Export to Excel</button></div>
     <div class="col-sm-2"> <button class="save-button" routerLink="/addchemical">Add chemical +</button></div>
   </div>
-  <div class="container">
-    <table class="table" id="tableId" style="width: 100%">
-      <thead>
-        <tr>
-          <th>ChemicalName</th>
-          <th>Brand</th>
-          <th>CASNo</th>
-          <th>CATNo</th>
-          <th>Purity</th>
-          <th (click)="sortData('Expiration')">Expiration<i class="fas"
-              [ngClass]="{'fa-sort': sortedColumn !== 'Expiration', 'fa-sort-up': sortedColumn === 'Expiration' && sortDirection === 1, 'fa-sort-down': sortedColumn === 'Expiration' && sortDirection === -1}"></i>
-          </th>
-          <th>Traceability</th>
-          <th (click)="sortData('ListPrice')">ListPrice<i class="fas"
-              [ngClass]="{'fa-sort': sortedColumn !== 'ListPrice', 'fa-sort-up': sortedColumn === 'ListPrice' && sortDirection === 1, 'fa-sort-down': sortedColumn === 'ListPrice' && sortDirection === -1}"></i>
-          </th>
-          <th>SurchargePrice</th>
-          <th colspan="2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of data">
-          <td>{{ item.ChemicalName }}</td>
-          <td>{{ item.Brand }}</td>
-          <td>{{ item.CASNo }}</td>
-          <td>{{ item.CATNo }}</td>
-          <td>{{ item.Purity }}</td>
-          <td>{{ item.Expiration}}</td>
-          <td>{{ item.Traceability }}</td>
-          <td>{{ item.ListPrice }}</td>
-          <td>{{ item.SurchargePrice }}</td>
-          <td>
-            <button class="cancel-button2" [routerLink]="['/editchemical', item.ChemicalId]"><mat-icon>edit</mat-icon></button>
-          </td>
-          <td>
-            <button class="cancel-button2" (click)="deleteChemicalData(item.ChemicalId)"><mat-icon>delete</mat-icon></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table" id="tableId" style="width: 100%">
+        <thead>
+          <tr>
+            <th><input type="checkbox" (click)="selectAllRows()"></th>
+            <th>ChemicalName</th>
+            <th>Brand</th>
+            <th>CASNo</th>
+            <th>CATNo</th>
+            <th>Purity</th>
+            <th (click)="sortData('Expiration')">Expiration<i class="fas"
+                [ngClass]="{'fa-sort': sortedColumn !== 'Expiration', 'fa-sort-up': sortedColumn === 'Expiration' && sortDirection === 1, 'fa-sort-down': sortedColumn === 'Expiration' && sortDirection === -1}"></i>
+            </th>
+            <th>Traceability</th>
+            <th (click)="sortData('ListPrice')">ListPrice<i class="fas"
+                [ngClass]="{'fa-sort': sortedColumn !== 'ListPrice', 'fa-sort-up': sortedColumn === 'ListPrice' && sortDirection === 1, 'fa-sort-down': sortedColumn === 'ListPrice' && sortDirection === -1}"></i>
+            </th>
+            <th>SurchargePrice</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td><input type="checkbox" (click)="selectRow()"></td>
+            <td>{{ item.ChemicalName }}</td>
+            <td>{{ item.Brand }}</td>
+            <td>{{ item.CASNo }}</td>
+            <td>{{ item.CATNo }}</td>
+            <td>{{ item.Purity }}</td>
+            <td>{{ item.Expiration}}</td>
+            <td>{{ item.Traceability }}</td>
+            <td>{{ item.ListPrice }}</td>
+            <td>{{ item.SurchargePrice }}</td>
+            <td>
+              <button class="cancel-button2" [routerLink]="['/editchemical', item.ChemicalId]"><mat-icon>edit</mat-icon></button>
+            </td>
+            <td>
+              <button class="cancel-button2" (click)="deleteChemicalData(item.ChemicalId)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
