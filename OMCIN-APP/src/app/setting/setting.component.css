@@ -1,0 +1,48 @@
+.sidenav-container {
+    height: 100%;
+    background-color: white;
+}
+
+.sidenav {
+    width: 170px;
+}
+
+.menu-button {
+    margin-left: 8px;
+}
+
+.toolbar-title {
+    margin-left: 8px;
+}
+
+.active-item {
+    background-color: #00C4B9;
+    border-radius: 5px;
+    color: white;
+}
+
+mat-icon{
+    padding-top:6px;
+    font-size: 20px;
+}
+
+.save-button {
+    margin-left: 5px;
+    background-color: #00C4B9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    color: #00C4B9;
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px ;
+    border:1px solid #00C4B9;
+    cursor: pointer;
+}
+  

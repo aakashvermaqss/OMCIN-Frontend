@@ -16,32 +16,32 @@
                 <tr>
                     <th><label for="companyName">Company Name</label></th>
                     <td><input type="text" id="companyName" name="companyName" placeholder="Enter Company name"
-                            [(ngModel)]="company.CompanyName" class="form-control" required></td>
+                            [(ngModel)]="company[0].CompanyName" class="form-control" required></td>
                     <th><label for="zipcode">Zip Code</label></th>
                     <td><input type="text" id="zipcode" name="purity" placeholder="Enter zip code"
-                            [(ngModel)]="company.Zipcode" class="form-control" required></td>
+                            [(ngModel)]="company[0].Zipcode" class="form-control" required></td>
                 </tr>
                 <tr>
                     <th><label for="address">Brand</label></th>
                     <td><input type="text" id="address" name="address" placeholder="Address line 1"
-                            [(ngModel)]="company.Address" class="form-control" required></td>
+                            [(ngModel)]="company[0].Address" class="form-control" required></td>
                     <th><label for="gstNo">GST No</label></th>
                     <td><input type="text" id="gstNo" name="gstNo" placeholder="Enter GST no"
-                            [(ngModel)]="company.GSTNo" class="form-control" required> </td>
+                            [(ngModel)]="company[0].GSTNo" class="form-control" required> </td>
                 </tr>
                 <tr>
                     <th><label for="address"></label></th>
                     <td><input type="text" id="address" name="address" placeholder="Address line 2"
-                            [(ngModel)]="company.Address2" class="form-control" required></td>
+                            [(ngModel)]="company[0].Address2" class="form-control" required></td>
                     <th><label for="vatNo">VAT No</label></th>
                     <td><input type="text" id="vatNo" name="vatNo" placeholder="Enter VAT no"
-                            [(ngModel)]="company.VATNo" class="form-control" required> </td>
+                            [(ngModel)]="company[0].VATNo" class="form-control" required> </td>
                 </tr>
                 <tr>
                     <th><label for="country">Country</label></th>
                     <td>
                         <select class="form-select" aria-label="company.Country" id="country" name="country"
-                            [(ngModel)]="company.Country" required>
+                            [(ngModel)]="company[0].Country" required>
                             <option value="" disabled selected>Select</option>
                             <option value="India">India</option>
                             <option value="US">US</option>
@@ -49,14 +49,14 @@
                         </select>
                     </td>
                     <th><label for="cin">CIN</label></th>
-                    <td><input type="text" id="cin" name="cin" placeholder="Enter CIN" [(ngModel)]="company.CIN"
+                    <td><input type="text" id="cin" name="cin" placeholder="Enter CIN" [(ngModel)]="company[0].CIN"
                             class="form-control" required></td>
                 </tr>
                 <tr>
                     <th><label for="state">State</label></th>
                     <td>
                         <select class="form-select" aria-label="company.State" id="state" name="state"
-                            [(ngModel)]="company.State" required>
+                            [(ngModel)]="company[0].State" required>
                             <option value="" disabled selected>Select</option>
                             <option value="UP">UP</option>
                             <option value="Maharastra">Maharastra</option>
@@ -66,7 +66,7 @@
                     <th><label for="currency">Currency</label></th>
                     <td>
                         <select class="form-select" aria-label="company.Currency" id="currency" name="currency"
-                            [(ngModel)]="company.Currency" required>
+                            [(ngModel)]="company[0].Currency" required>
                             <option value="" disabled selected>Select</option>
                             <option value="USD">United State Dollar</option>
                             <option value="INR">Indian Rupees</option>
@@ -77,7 +77,7 @@
                     <th><label for="city">City</label></th>
                     <td>
                         <select class="form-select" aria-label="company.City" id="city" name="city"
-                            [(ngModel)]="company.City" required>
+                            [(ngModel)]="company[0].City" required>
                             <option value="" disabled selected>Select</option>
                             <option value="Lucknow">Luckow</option>
                             <option value="Mumbai">Mumbai</option>

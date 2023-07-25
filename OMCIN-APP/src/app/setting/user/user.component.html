@@ -1,0 +1,85 @@
+<div class="container">
+    <div *ngFor="let item of data">
+        <mat-card>
+            <table style="width: 100%;" cellspacing="5px" cellpadding="5px">
+                <tr>
+                    <td rowspan="2">
+                        <img src="../../../assets/profilepic.jpg" height="80px" width="80px"
+                            style="border-radius: 5px;">
+                    </td>
+                    <td>
+                        Employee Id
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="item.EmployeeId" name="employeeId"
+                            placeholder="Enter Employee id" readonly required>
+                    </td>
+                    <td>
+                        Department
+                    </td>
+                    <td>
+                        <select class="form-select" aria-label="item.Department" id="department" name="department"
+                            [(ngModel)]="item.Department" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Mechanical">Mechanical</option>
+                            <option value="Accounts">Accounts</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="cancel-button2" (click)="deleteEmployee()"><mat-icon>delete</mat-icon></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email address
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Enter emial address"
+                            [(ngModel)]="item.Email" name="email" readonly required>
+                    </td>
+                    <td>
+                        Role
+                    </td>
+                    <td>
+                        <select class="form-select" aria-label="item.Role" id="role" name="role" [(ngModel)]="item.Role"
+                            required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Operator">Operator</option>
+                            <option value="Approver">Approver</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+
+                    </td>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        <input type="Password" class="form-control" placeholder="Enter password"
+                            [(ngModel)]="item.Password" name="password" readonly required>
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="item.IsActive" name="status">
+                        Active/In-active
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                        <input type="number" class="form-control" placeholder="Enter phone number" name="phoneNo"
+                            [(ngModel)]="item.PhoneNo" required>
+                    </td>
+                </tr>
+            </table>
+        </mat-card>
+        <br>
+    </div>
+</div>

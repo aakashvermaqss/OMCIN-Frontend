@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./setting.component.css']
 })
 export class SettingComponent {
+  userPage:boolean=false;
+  currencyPage:boolean=true;
+
+  openCurrency(){
+    this.currencyPage=true;
+    this.userPage=false;
+  }
+
+  openUser(){
+    this.currencyPage=false;
+    this,this.userPage=true;
+  }
+
+  filterOpenDialog(){
+
+  }
+
+  search(){
+    
+  }
 
 }

@@ -16,11 +16,18 @@ import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.com
 import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
 import { EditCompanyComponent } from './MasterData/edit-company/edit-company.component';
 import { AddCompanyComponent } from './MasterData/add-company/add-company.component';
+import { CurrencyComponent } from './setting/currency/currency.component';
+import { UserComponent } from './setting/user/user.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: 'twofactorauthentication',
@@ -71,12 +78,20 @@ const routes: Routes = [
     component: EditchemicalComponent
   },
   {
-    path:'editcompany/:CompanyId',
+    path: 'editcompany/:CompanyId',
     component: EditCompanyComponent
   },
   {
-    path:'addcompany',
-    component:AddCompanyComponent
+    path: 'addcompany',
+    component: AddCompanyComponent
+  },
+  {
+    path: 'currency',
+    component: CurrencyComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent
   },
 ];
 

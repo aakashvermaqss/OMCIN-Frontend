@@ -14,10 +14,10 @@ export class DataService {
 
   //login APIs
 
-  getLoginData(email: string, password: string): Observable<any> {
-    const apiUrl = `http://localhost:3000/api/data?email=${email}&password=${password}`;
+  LoginData(data:any): Observable<any> {
+    const apiUrl = 'http://localhost:3000/api/auth/login';
 
-    return this.http.get(apiUrl).pipe(
+    return this.http.post(apiUrl,data).pipe(
       catchError((error: any) => {
         return throwError(() => new Error(error));
       })
@@ -160,6 +160,18 @@ export class DataService {
     const apiUrl = `http://localhost:3000/api/companies/deleteCompany/${companyId}`;
 
     return this.http.delete(apiUrl).pipe(
+      catchError((error: any) => {
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+
+  //user APIs
+
+  getEmployeesDetails(): Observable<any> {
+    const apiUrl = 'http://localhost:3000/api/employees/getEmployees';
+
+    return this.http.get(apiUrl).pipe(
       catchError((error: any) => {
         return throwError(() => new Error(error));
       })

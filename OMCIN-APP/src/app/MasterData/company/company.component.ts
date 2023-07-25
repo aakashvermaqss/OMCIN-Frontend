@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { ChemicalDialogComponentComponent } from 'src/app/chemical-dialog-component/chemical-dialog-component.component';
+import { CompanydialogComponent } from './companydialog/companydialog.component';
 
 @Component({
   selector: 'app-company',
@@ -85,7 +85,7 @@ export class CompanyComponent implements OnInit {
   }
   
   filterOpenDialog() {
-    const dialogRef = this.dialog.open(ChemicalDialogComponentComponent, {
+    const dialogRef = this.dialog.open(CompanydialogComponent, {
       width: '400px' // Specify the desired width of the dialog
     });
 

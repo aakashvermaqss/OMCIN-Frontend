@@ -31,10 +31,13 @@ import { AddChemicalComponent } from './MasterData/add-chemical/add-chemical.com
 import { EditchemicalComponent } from './MasterData/editchemical/editchemical.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
 import { EditCompanyComponent } from './MasterData/edit-company/edit-company.component';
 import { AddCompanyComponent } from './MasterData/add-company/add-company.component';
-import { ChemicalDialogComponentComponent } from './chemical-dialog-component/chemical-dialog-component.component';
+import { CurrencyComponent } from './setting/currency/currency.component';
+import { UserComponent } from './setting/user/user.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CompanydialogComponent } from './MasterData/company/companydialog/companydialog.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,9 @@ import { ChemicalDialogComponentComponent } from './chemical-dialog-component/ch
     MyDialogComponent,
     EditCompanyComponent,
     AddCompanyComponent,
-    ChemicalDialogComponentComponent
+    CurrencyComponent,
+    UserComponent,
+    CompanydialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,11 +80,12 @@ import { ChemicalDialogComponentComponent } from './chemical-dialog-component/ch
     MatListModule,
     HttpClientModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
- }
+}

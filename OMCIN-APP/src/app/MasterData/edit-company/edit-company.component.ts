@@ -11,22 +11,27 @@ import { DataService } from 'src/app/services/data.service';
 
 export class EditCompanyComponent implements OnInit {
   subscription: Subscription | undefined;
-  company: any = {};
+  company:any= {};
   companyId: any;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.route.params.subscribe(params => {
       this.companyId = params['CompanyId'];
     });
+    console.log(this.companyId);
     this.getCompanyDetails(this.companyId);
+
   }
 
   getCompanyDetails(companyId: any): void {
     this.subscription = this.dataService.getCompanyDetailsById(companyId).subscribe({
       next: (response) => {
         this.company = response; 
+        console.log(response);
+        console.log(this.company);
       },
       error: (error) => {
         console.error(error);

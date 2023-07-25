@@ -8,23 +8,24 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  data: any[] = [];
+  data: any;
   email: string = '';
   password: string = '';
+  token:any;
 
   constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit() {
-    this.onLogin();
   }
 
   onLogin() {
-    console.log(`Email: ${this.email}, Password: ${this.password}`);
+    this.data={username:this.email,password:this.password};
     if (this.email !== '' && this.password !== '') {
-      this.dataService.getLoginData(this.email, this.password).subscribe({
+      this.dataService.LoginData(this.data).subscribe({
         next: (response) => {
-          this.data = response;
-          console.log(this.data);
+          this.token = response.token;
+          console.log(this.token);
+          this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           console.error(error);
