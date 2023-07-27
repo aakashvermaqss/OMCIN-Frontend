@@ -18,22 +18,28 @@ import { EditCompanyComponent } from './MasterData/edit-company/edit-company.com
 import { AddCompanyComponent } from './MasterData/add-company/add-company.component';
 import { CurrencyComponent } from './setting/currency/currency.component';
 import { UserComponent } from './setting/user/user.component';
+import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-      },
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
+  },
   {
     path: '',
     component: SidebarmenuComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent},
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
       { path: 'order', component: OrderComponent },
       { path: 'quotation', component: QuotationComponent },
       { path: 'company', component: CompanyComponent },

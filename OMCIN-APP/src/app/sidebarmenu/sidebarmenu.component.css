@@ -1,5 +1,6 @@
 .sidenav-container {
     height: 100%;
+    
   }
   
   .container {
@@ -32,12 +33,13 @@
   }
   
   mat-icon{
-    padding-top:6px;
-    font-size: 20px;
+    padding-top:10px;
+    font-size: 14px;
   }
   
   .nav-item-name{
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 500;
   }
   
   .active-item {
@@ -45,5 +47,7 @@
     border-radius: 5px;
     color: white;
   }
+
+
   
   

@@ -1,0 +1,35 @@
+.save-button {
+    margin-left: 27px;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    margin-left: 10px;
+    color: #00C4B9;
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #00C4B9;
+    cursor: pointer;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #E5FAF8;
+}
+
+.header{
+    justify-content: center;
+}
+
+

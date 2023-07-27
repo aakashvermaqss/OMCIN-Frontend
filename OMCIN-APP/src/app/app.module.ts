@@ -39,6 +39,7 @@ import { UserComponent } from './setting/user/user.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CompanydialogComponent } from './MasterData/company/companydialog/companydialog.component';
 import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
     CurrencyComponent,
     UserComponent,
     CompanydialogComponent,
-    SidebarmenuComponent
+    SidebarmenuComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

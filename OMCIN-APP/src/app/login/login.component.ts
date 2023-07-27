@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,15 @@ export class LoginComponent implements OnInit {
   data: any;
   email: string = '';
   password: string = '';
-  token:any;
+  token: any;
 
-  constructor(private router: Router, private dataService: DataService) {}
+  constructor(private router: Router, private dataService: DataService, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   onLogin() {
-    this.data={username:this.email,password:this.password};
+    this.data = { username: this.email, password: this.password };
     if (this.email !== '' && this.password !== '') {
       this.dataService.LoginData(this.data).subscribe({
         next: (response) => {
@@ -32,5 +33,12 @@ export class LoginComponent implements OnInit {
         }
       });
     }
+    if (this.authService.login(this.email, this.password)) {
+     
+    
+    } else {
+      // Handle login failure, show error message, etc.
+    }
   }
+
 }
