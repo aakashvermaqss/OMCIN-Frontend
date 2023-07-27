@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebarmenu.component.css']
 })
 export class SidebarmenuComponent {
+
+  constructor() {}
+
+  onLogout(){
+    
+  }
 }
