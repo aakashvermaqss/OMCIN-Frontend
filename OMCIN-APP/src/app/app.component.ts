@@ -7,13 +7,7 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isLoggedIn:boolean=true;
-  constructor(private loginService: LoginService){}
+  constructor(){}
   ngOnInit(){
-    this.loginService.isAuthenticated();    
-  }
-  title = 'OMCIN-APP';
-  
-  toggleSidenav() {
   }
 }

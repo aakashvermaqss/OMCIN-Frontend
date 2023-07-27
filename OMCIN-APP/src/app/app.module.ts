@@ -38,6 +38,7 @@ import { CurrencyComponent } from './setting/currency/currency.component';
 import { UserComponent } from './setting/user/user.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CompanydialogComponent } from './MasterData/company/companydialog/companydialog.component';
+import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CompanydialogComponent } from './MasterData/company/companydialog/compa
     AddCompanyComponent,
     CurrencyComponent,
     UserComponent,
-    CompanydialogComponent
+    CompanydialogComponent,
+    SidebarmenuComponent
   ],
   imports: [
     BrowserModule,
@@ -87,5 +89,4 @@ import { CompanydialogComponent } from './MasterData/company/companydialog/compa
   bootstrap: [AppComponent]
 })
 export class AppModule {
-
 }

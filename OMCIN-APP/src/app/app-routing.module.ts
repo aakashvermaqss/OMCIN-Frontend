@@ -19,79 +19,116 @@ import { AddCompanyComponent } from './MasterData/add-company/add-company.compon
 import { CurrencyComponent } from './setting/currency/currency.component';
 import { UserComponent } from './setting/user/user.component';
 
+// const routes: Routes = [
+//   {
+//     path: 'login',
+//     component: LoginComponent
+//   },
+//   {
+//     path: '',
+//     redirectTo: 'login',
+//     pathMatch: 'full'
+//   },
+//   {
+//     path: 'twofactorauthentication',
+//     component: TwofactorauthenticationComponent
+//   },
+//   {
+//     path: 'dashboard',
+//     component: DashboardComponent
+//   },
+//   {
+//     path: 'order',
+//     component: OrderComponent
+//   },
+//   {
+//     path: 'quotation',
+//     component: QuotationComponent
+//   },
+//   {
+//     path: 'company',
+//     component: CompanyComponent
+//   },
+//   {
+//     path: 'chemical',
+//     component: ChemicalsComponent
+//   },
+//   {
+//     path: 'employee',
+//     component: EmployeeComponent
+//   },
+//   {
+//     path: 'orderdetail',
+//     component: OrderdetailComponent
+//   },
+//   {
+//     path: 'quotationdetail',
+//     component: QuotationdetailComponent
+//   },
+//   {
+//     path: 'setting',
+//     component: SettingComponent
+//   },
+//   {
+//     path: 'addchemical',
+//     component: AddChemicalComponent
+//   },
+//   {
+//     path: 'editchemical/:ChemicalId',
+//     component: EditchemicalComponent
+//   },
+//   {
+//     path: 'editcompany/:CompanyId',
+//     component: EditCompanyComponent
+//   },
+//   {
+//     path: 'addcompany',
+//     component: AddCompanyComponent
+//   },
+//   {
+//     path: 'currency',
+//     component: CurrencyComponent
+//   },
+//   {
+//     path: 'user',
+//     component: UserComponent
+//   },
+//   {
+//     path:'sidebarmenu',
+//     component:SidebarmenuComponent
+//   },
+// ];
+
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
-  },
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      },
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'twofactorauthentication',
-    component: TwofactorauthenticationComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'order',
-    component: OrderComponent
-  },
-  {
-    path: 'quotation',
-    component: QuotationComponent
-  },
-  {
-    path: 'company',
-    component: CompanyComponent
-  },
-  {
-    path: 'chemical',
-    component: ChemicalsComponent
-  },
-  {
-    path: 'employee',
-    component: EmployeeComponent
-  },
-  {
-    path: 'orderdetail',
-    component: OrderdetailComponent
-  },
-  {
-    path: 'quotationdetail',
-    component: QuotationdetailComponent
-  },
-  {
-    path: 'setting',
-    component: SettingComponent
-  },
-  {
-    path: 'addchemical',
-    component: AddChemicalComponent
-  },
-  {
-    path: 'editchemical/:ChemicalId',
-    component: EditchemicalComponent
-  },
-  {
-    path: 'editcompany/:CompanyId',
-    component: EditCompanyComponent
-  },
-  {
-    path: 'addcompany',
-    component: AddCompanyComponent
-  },
-  {
-    path: 'currency',
-    component: CurrencyComponent
-  },
-  {
-    path: 'user',
-    component: UserComponent
+    component: SidebarmenuComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'order', component: OrderComponent },
+      { path: 'quotation', component: QuotationComponent },
+      { path: 'company', component: CompanyComponent },
+      { path: 'chemical', component: ChemicalsComponent },
+      { path: 'employee', component: EmployeeComponent },
+      { path: 'orderdetail', component: OrderdetailComponent },
+      { path: 'quotationdetail', component: QuotationdetailComponent },
+      { path: 'setting', component: SettingComponent },
+      { path: 'addchemical', component: AddChemicalComponent },
+      { path: 'editchemical/:ChemicalId', component: EditchemicalComponent },
+      { path: 'editcompany/:CompanyId', component: EditCompanyComponent },
+      { path: 'addcompany', component: AddCompanyComponent },
+      { path: 'currency', component: CurrencyComponent },
+      { path: 'user', component: UserComponent }
+    ]
   },
 ];
 
