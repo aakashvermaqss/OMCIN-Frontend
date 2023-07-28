@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   token: any;
   rememberMe: boolean = false;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService,private toastr: ToastrService) { }
 
   ngOnInit() {
     const storedUsername = localStorage.getItem('username');
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
     if (this.email !== '' && this.password !== '') {
       this.authService.login(this.data).subscribe(
         (response) => {
-          console.log('Login successful. Token:', response.token);
+          this.toastr.success('Login successful!', 'Success');
           if (this.rememberMe) {
             localStorage.setItem('username', this.email);
             localStorage.setItem('token', response.token);

@@ -40,6 +40,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CompanydialogComponent } from './MasterData/company/companydialog/companydialog.component';
 import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { LogoutComponent } from './logout/logout.component';
     HttpClientModule,
     MatDialogModule,
     MatSliderModule,
-    MatTabsModule
+    MatTabsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

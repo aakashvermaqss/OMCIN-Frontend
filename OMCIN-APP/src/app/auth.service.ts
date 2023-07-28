@@ -1,13 +1,14 @@
 // auth.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private toastr: ToastrService) { }
   isLoggedIn: boolean = false;
 
   //login APIs
@@ -17,7 +18,7 @@ export class AuthService {
 
     return this.http.post(apiUrl,data).pipe(
       catchError((error: any) => {
-        alert("Please enter correct Login Credentials");
+        this.toastr.error('Login Failed', 'Incorrect Email/Password');
         return throwError(() => new Error(error));
       })
     );
