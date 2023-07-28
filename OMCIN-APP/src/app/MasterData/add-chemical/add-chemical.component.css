@@ -17,3 +17,18 @@
     border:1px solid #00C4B9;
     cursor: pointer;
 }
+
+th {
+    text-align: left;
+}
+
+label,
+input {
+    padding-right: 00%;
+
+}
+.formcontainer{
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+}

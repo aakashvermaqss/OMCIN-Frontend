@@ -22,7 +22,7 @@ export class EditchemicalComponent implements OnInit {
     this.getChemicalDetails(this.chemicalId);
   }
 
-  getChemicalDetails(chemicalId: any): void {
+  getChemicalDetails(chemicalId: any){
     this.subscription = this.dataService.getChemicalDetailsById(chemicalId).subscribe({
       next: (response) => {
         this.chemical = response; 
@@ -33,7 +33,7 @@ export class EditchemicalComponent implements OnInit {
     });
   }
 
-  editChemicalData(updatedChemicalData:any): void {
+  editChemicalData(updatedChemicalData:any){
     console.log(updatedChemicalData);
     this.subscription = this.dataService.editChemicalDetails(updatedChemicalData, this.chemicalId).subscribe({
       next: (response) => {

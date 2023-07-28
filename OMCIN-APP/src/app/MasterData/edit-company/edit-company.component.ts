@@ -21,7 +21,6 @@ export class EditCompanyComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.companyId = params['CompanyId'];
     });
-    console.log(this.companyId);
     this.getCompanyDetails(this.companyId);
 
   }
@@ -30,8 +29,6 @@ export class EditCompanyComponent implements OnInit {
     this.subscription = this.dataService.getCompanyDetailsById(companyId).subscribe({
       next: (response) => {
         this.company = response; 
-        console.log(response);
-        console.log(this.company);
       },
       error: (error) => {
         console.error(error);
@@ -39,9 +36,9 @@ export class EditCompanyComponent implements OnInit {
     });
   }
 
-  editChemicalData(updatedCompanyData:any): void {
+  editCompanyData(updatedCompanyData:any): void {
     console.log(updatedCompanyData);
-    this.subscription = this.dataService.editChemicalDetails(updatedCompanyData, this.companyId).subscribe({
+    this.subscription = this.dataService.editCompanyDetails(updatedCompanyData,this.companyId).subscribe({
       next: (response) => {
       },
       error: (error) => {
@@ -51,7 +48,7 @@ export class EditCompanyComponent implements OnInit {
   }
 
   submitForm(chemicalData:any){
-    this.editChemicalData(this.company[0]);
+    this.editCompanyData(this.company[0]);
   }
 }
 

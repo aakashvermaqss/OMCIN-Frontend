@@ -86,7 +86,7 @@ export class CompanyComponent implements OnInit {
   
   filterOpenDialog() {
     const dialogRef = this.dialog.open(CompanydialogComponent, {
-      width: '400px' // Specify the desired width of the dialog
+      width: '400px' 
     });
 
     dialogRef.afterClosed().subscribe((filterData) => {

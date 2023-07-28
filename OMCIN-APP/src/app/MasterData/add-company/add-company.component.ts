@@ -17,7 +17,6 @@ export class AddCompanyComponent implements OnInit {
   }
 
   saveCompanyData(data: any) {
-    console.log(data);
     this.subscription = this.dataService.putCompanyDetails(data).subscribe({
       next: (response) => {
       },
