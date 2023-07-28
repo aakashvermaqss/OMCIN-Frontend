@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -13,32 +12,40 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
   token: any;
+  rememberMe: boolean = false;
 
-  constructor(private router: Router, private dataService: DataService, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      this.email = storedUsername;
+      this.rememberMe = true;
+    }
   }
 
   onLogin() {
     this.data = { username: this.email, password: this.password };
     if (this.email !== '' && this.password !== '') {
-      this.dataService.LoginData(this.data).subscribe({
-        next: (response) => {
-          this.token = response.token;
-          console.log(this.token);
+      this.authService.login(this.data).subscribe(
+        (response) => {
+          console.log('Login successful. Token:', response.token);
+          if (this.rememberMe) {
+            localStorage.setItem('username', this.email);
+            localStorage.setItem('token', response.token);
+          } else {
+            localStorage.removeItem('username');
+          }
+          if (response.token) {
+            this.authService.loginAuth(response.token)
+          }
           this.router.navigate(['/dashboard']);
-        },
-        error: (error) => {
-          console.error(error);
         }
-      });
+      );
     }
-    if (this.authService.login(this.email, this.password)) {
-     
-    
-    } else {
-      // Handle login failure, show error message, etc.
+
+    else {
+      alert("Please enter correct Login Credentials");
     }
   }
-
 }

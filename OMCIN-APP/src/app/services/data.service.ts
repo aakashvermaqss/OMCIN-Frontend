@@ -10,20 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class DataService {
 
   constructor(private http: HttpClient) { }
-
-
-  //login APIs
-
-  LoginData(data:any): Observable<any> {
-    const apiUrl = 'http://localhost:3000/api/auth/login';
-
-    return this.http.post(apiUrl,data).pipe(
-      catchError((error: any) => {
-        return throwError(() => new Error(error));
-      })
-    );
-  }
-
+  
   //chemicals APIs
 
   getChemicalDetails(): Observable<any> {
