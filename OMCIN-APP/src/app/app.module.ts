@@ -41,6 +41,8 @@ import { CompanydialogComponent } from './MasterData/company/companydialog/compa
 import { SidebarmenuComponent } from './sidebarmenu/sidebarmenu.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AddQuotationComponent } from './add-quotation/add-quotation.component';
+import { AddOrderComponent } from './add-order/add-order.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { ToastrModule } from 'ngx-toastr';
     UserComponent,
     CompanydialogComponent,
     SidebarmenuComponent,
-    LogoutComponent
+    LogoutComponent,
+    AddQuotationComponent,
+    AddOrderComponent
   ],
   imports: [
     BrowserModule,

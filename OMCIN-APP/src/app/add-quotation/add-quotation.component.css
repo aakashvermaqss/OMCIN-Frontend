@@ -44,3 +44,7 @@ table td {
 table{
     width: 100%;
 }
+
+.form-control::placeholder {
+    font-size: 12px; /* Set the font size as per your requirement */
+  }

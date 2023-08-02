@@ -20,6 +20,8 @@ import { CurrencyComponent } from './setting/currency/currency.component';
 import { UserComponent } from './setting/user/user.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { AddQuotationComponent } from './add-quotation/add-quotation.component';
+import { AddOrderComponent } from './add-order/add-order.component';
 
 const routes: Routes = [
   {
@@ -46,7 +48,9 @@ const routes: Routes = [
       { path: 'chemical', component: ChemicalsComponent },
       { path: 'employee', component: EmployeeComponent },
       { path: 'orderdetail', component: OrderdetailComponent },
+      { path: 'addorder', component: AddOrderComponent },
       { path: 'quotationdetail', component: QuotationdetailComponent },
+      { path: 'addquotation', component: AddQuotationComponent },
       { path: 'setting', component: SettingComponent },
       { path: 'addchemical', component: AddChemicalComponent },
       { path: 'editchemical/:ChemicalId', component: EditchemicalComponent },

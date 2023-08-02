@@ -1,1 +1,60 @@
-<p>quotation works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Quotation</h2>
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search()" placeholder="Search" />
+        </div>
+        <div class="col-sm-1"><button class="cancel-button" (click)="filterOpenDialog()">Filters</button></div>
+        <div class="col-sm-2"> <button class="save-button" routerLink="/addquotation">Add Quotation +</button></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table" id="tableId" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Quotation No.</th>
+                        <th>Quotation Date</th>
+                        <th>Customer</th>
+                        <th>Address</th>
+                        <th>Is Domestic</th>
+                        <th>Item count</th>
+                        <th>Discount</th>
+                        <th>Status</th>
+                        <th>Total Amount</th>
+                        <th>Orders</th>
+                        <th colspan="3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td><input type="checkbox"></td>
+                        <td><a routerLink="/editquotation">{{ item.QuotationNo }}</a></td>
+                        <td>{{ item.QuotationDate }}</td>
+                        <td>{{ item.Customer }}</td>
+                        <td>{{ item.Address }}</td>
+                        <td>{{ item.IsDomestic }}</td>
+                        <td>{{ item.ItemCount }}</td>
+                        <td>{{ item.Discount}}</td>
+                        <td>{{ item.Status }}</td>
+                        <td>{{ item.TotalAmount }}</td>
+                        <td><a>Convert to Order</a></td>
+                        <td>
+                            <button class="cancel-button2"
+                                [routerLink]="['/editquotation', item.QuotationId]"><mat-icon>edit</mat-icon></button>
+                        </td>
+                        <td>
+                            <button class="cancel-button2"
+                                (click)="deleteQuotationData(item.QuotationId)"><mat-icon>delete</mat-icon></button>
+                        </td>
+                        <td>
+                            <button class="cancel-button2" (click)="hideRow()"><mat-icon>hide</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

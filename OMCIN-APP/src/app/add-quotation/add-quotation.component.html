@@ -1,0 +1,175 @@
+<div class="container">
+    <h3>Quotation > AddQuotation</h3>
+    <div class="formcontainer">
+        <form #quotationForm="ngForm" name="quotation">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h2>Quotation-{{quotationNo}}</h2>
+                </div>
+                <div class="col-sm-1">
+                    <button class="save-button" (click)="submitForm(quotationForm.value)"
+                        [disabled]="!quotationForm.form.valid" routerLink="/quotation">Save</button>
+                </div>
+                <div class="col-sm-1">
+                    <button class="cancel-button" routerLink="/quotation">Cancel</button>
+                </div>
+            </div>
+            <div class="row" style="border-style: solid;border-radius: 5px;border-color: lightgray;padding: 5px;">
+                <div class="col-sm-10">
+                    <table>
+                        <tr>
+                            <th>Sender</th>
+                            <th>Buyer</th>
+                            <td>Buyer`s Order No.</td>
+                            <td>Dated</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="no-box-input" placeholder="Sender Company Name"
+                                    [(ngModel)]="quotation.SenderName" name="SenderName"> </td>
+                            <td><input type="text" class="no-box-input" placeholder="Buyer Company Name"
+                                    [(ngModel)]="quotation.BuyerName" name="BuyerName"> </td>
+                            <td><input type="text" class="no-box-input" placeholder="Buyer`s Order Number"
+                                    [(ngModel)]="quotation.BuyerOrderNo" name="BuyerOrderNo"> </td>
+                            <td><input type="date" class="no-box-input" placeholder="Dated"
+                                    [(ngModel)]="quotation.Dated" name="quotation.Dated"> </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="no-box-input" placeholder="Sender Company Address"
+                                    [(ngModel)]="quotation.SenderAddress" name="SenderAddress"> </td>
+                            <td><input type="text" class="no-box-input" placeholder="Buyer Company Address"
+                                    [(ngModel)]="quotation.BuyerAddress1" name="BuyerAddress1"> </td>
+                            <td>Dispatch Documentation No</td>
+                            <td>Delivery Note Date</td>
+                        </tr>
+                        <tr>
+                            <td>GSTIN/UIN:<input type="text" class="no-box-input" placeholder="GSTIN/UIN"
+                                    [(ngModel)]="quotation.GSTIN_UIN" name="GSTIN_UIN"></td>
+                            <td><input type="text" class="no-box-input" placeholder="City,Country"
+                                    [(ngModel)]="quotation.BuyerAddress2" name="BuyerAddress2"></td>
+                            <td><input type="text" class="no-box-input" placeholder="Dispatch Documentation No"
+                                    [(ngModel)]="quotation.DispatchDocumentationNo" name="DispatchDocumentationNo"></td>
+                            <td><input type="date" class="no-box-input" placeholder="Delivery Note Date"
+                                    [(ngModel)]="quotation.DeliveryNoteDate" name="DeliveryNoteDate"></td>
+                        </tr>
+                        <tr>
+                            <td>CIN:<input type="text" class="no-box-input" placeholder="CIN"
+                                    [(ngModel)]="quotation.CIN" name="CIN"> </td>
+                            <td>Tele:<input type="number" class="no-box-input" placeholder="Tele"
+                                    [(ngModel)]="quotation.Tele" name="Tele"> </td>
+                            <td>Dispatch Documentation No</td>
+                            <td>Destination</td>
+                        </tr>
+                        <tr>
+                            <td>Email:<input type="text" class="no-box-input" placeholder="Email"
+                                    [(ngModel)]="quotation.SenderEmail" name="SenderEmail"></td>
+                            <td>Email:<input type="text" class="no-box-input" placeholder="Email"
+                                    [(ngModel)]="quotation.BuyerEmail" name="BuyerEmail"></td>
+                            <td><input type="text" class="no-box-input" placeholder="Dispatch Through"
+                                    [(ngModel)]="quotation.DispatchThrough" name="DispatchThrough"></td>
+                            <td><input type="text" class="no-box-input" placeholder="Destination"
+                                    [(ngModel)]="quotation.Destination" name="Destination"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-2" style="padding: 8px;">
+                    <mat-card>
+                        <button class="no-box-input" style="text-align:right;"><mat-icon>download</mat-icon></button>
+                        <img src="../../assets/pdf-icon.png" style="height: 100%; width: 100%; padding: 10px;">
+                    </mat-card>
+                </div>
+            </div>
+        </form>
+
+        <br>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>Item Listing</h2>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="search" class="form-control" [(ngModel)]="searchQuery" (input)="filterChemicals()"
+                            placeholder="Search for chemicals" />
+                        <ul *ngIf="filteredChemicals.length > 0">
+                            <li *ngFor="let chemical of filteredChemicals" (click)="selectChemical(chemical)">
+                                {{ chemical.ChemicalName }} - {{ chemical.Brand }} - {{ chemical.CATNo}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table" id="tableId" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" (click)="selectAllRows()"></th>
+                                    <th>Chemical</th>
+                                    <th>Brand</th>
+                                    <th>Description</th>
+                                    <th>UnitPrice</th>
+                                    <th>Quantity</th>
+                                    <th>SalePrice</th>
+                                    <th>Discount</th>
+                                    <th>Total</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of chemicalData">
+                                    <td><input type="checkbox" (click)="selectRow()"></td>
+                                    <td>{{ item.Chemical }}</td>
+                                    <td>{{ item.Brand }}</td>
+                                    <td>{{ item.Description }}</td>
+                                    <td>{{ item.UnitPrice }}</td>
+                                    <td>{{ item.Quantity }}</td>
+                                    <td>{{ item.SalePrice}}</td>
+                                    <td>{{ item.Discount }}</td>
+                                    <td>{{ item.Total }}</td>
+                                    <td>
+                                        <button class="cancel-button2"
+                                            [routerLink]="['/editcompany', item.CompanyId]"><mat-icon>edit</mat-icon></button>
+                                    </td>
+                                    <td>
+                                        <button class="cancel-button2"><mat-icon>delete</mat-icon></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <mat-card style="padding: 10px; background-color: rgb(250, 247, 247);">
+                    <p style="font-size: 15px;font-weight: bold;">Order Total</p>
+                    <table style="color: gray">
+                        <tr>
+                            <td>Subtotal</td>
+                            <td><input type="text" class="no-box-input" placeholder="SubTotal"
+                                    [(ngModel)]="quotation.SubTotal" name="SubTotal"></td>
+                        </tr>
+                        <tr>
+                            <td>Total discount</td>
+                            <td><input type="text" class="form-control" style="width:90%;" placeholder="TotalDiscount"
+                                    [(ngModel)]="quotation.TotalDiscount" name="TotalDiscount"></td>
+                        </tr>
+                        <tr>
+                            <td>SGST20%</td>
+                            <td><input type="text" class="no-box-input" placeholder="SGST" [(ngModel)]="quotation.SGST"
+                                    name="SGST"></td>
+                        </tr>
+                        <tr>
+                            <td>CGST20%</td>
+                            <td><input type="text" class="no-box-input" placeholder="CGST" [(ngModel)]="quotation.CGST"
+                                    name="CGST"></td>
+                        </tr>
+                        <tr>
+                            <th>Grand Total</th>
+                            <td><input type="text" class="no-box-input" placeholder="GrandTotal"
+                                    [(ngModel)]="quotation.GrandTotal" name="GrandTotal"></td>
+                        </tr>
+                    </table>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

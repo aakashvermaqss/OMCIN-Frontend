@@ -21,4 +21,15 @@ export class QuotationService {
       })
     );
   }
+  
+  putQuotationDetails(data: any): Observable<any> {
+    const apiUrl = 'http://localhost:3000/api/quotations/addQuotation';
+
+    return this.http.put(apiUrl,data).pipe(
+      catchError((error: any) => {
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+
 }
